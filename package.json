@@ -2,15 +2,26 @@
   "name": "knv",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "srv.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -b",
+    "start": "npm run build/srv.js",
+    "dev": "npm run build && npm run start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
+    "express": "^5.2.1",
+    "get-port": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.1.0",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.5",
     "typescript": "^5.9.3"
   }
 }
