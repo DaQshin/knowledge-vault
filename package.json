@@ -5,7 +5,7 @@
   "main": "srv.js",
   "scripts": {
     "build": "tsc -b",
-    "start": "npm run build/srv.js",
+    "start": "node build/srv.js",
     "dev": "npm run build && npm run start"
   },
   "keywords": [],
