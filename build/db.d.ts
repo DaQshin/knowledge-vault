@@ -1,5 +1,5 @@
 import { Schema } from "mongoose";
-export declare const userModel: import("mongoose").Model<{
+export declare const UserModel: import("mongoose").Model<{
     username: string;
     email: string;
     password: string;
@@ -90,7 +90,7 @@ export declare const userModel: import("mongoose").Model<{
 } & {
     __v: number;
 }>;
-export declare const contentModel: import("mongoose").Model<{
+export declare const ContentModel: import("mongoose").Model<{
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
@@ -201,7 +201,7 @@ export declare const contentModel: import("mongoose").Model<{
 } & {
     __v: number;
 }>;
-export declare const tagModel: import("mongoose").Model<{
+export declare const TagModel: import("mongoose").Model<{
     tag: string;
 }, {}, {}, {
     id: string;
@@ -260,7 +260,7 @@ export declare const tagModel: import("mongoose").Model<{
 } & {
     __v: number;
 }>;
-export declare const linkModel: import("mongoose").Model<{
+export declare const LinkModel: import("mongoose").Model<{
     user?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
 } & import("mongoose").DefaultTimestampProps, {}, {}, {

@@ -24,8 +24,8 @@ const LinkSchema = new Schema({
     hash: String,
     user: { type: Schema.Types.ObjectId, ref: "User" },
 }, { timestamps: true });
-export const userModel = model("User", UserSchema);
-export const contentModel = model("Content", ContentSchema);
-export const tagModel = model("Tag", TagSchema);
-export const linkModel = model("Link", LinkSchema);
+export const UserModel = model("User", UserSchema);
+export const ContentModel = model("Content", ContentSchema);
+export const TagModel = model("Tag", TagSchema);
+export const LinkModel = model("Link", LinkSchema);
 //# sourceMappingURL=db.js.map
