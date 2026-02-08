@@ -6,7 +6,7 @@ var TagTypes;
     TagTypes["HEALTH"] = "health";
 })(TagTypes || (TagTypes = {}));
 const UserSchema = new Schema({
-    username: { type: String, required: true, unique: true },
+    firebaseUid: String,
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
 }, { timestamps: true });
@@ -15,14 +15,14 @@ const ContentSchema = new Schema({
     type: { type: String, required: true },
     title: { type: String, required: true },
     tags: [{ type: Schema.Types.ObjectId, ref: "Tag" }],
-    user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
 }, { timestamps: true });
 const TagSchema = new Schema({
     tag: { type: String, required: true },
 });
 const LinkSchema = new Schema({
     hash: String,
-    user: { type: Schema.Types.ObjectId, ref: "User" },
+    userId: { type: Schema.Types.ObjectId, ref: "User" },
 }, { timestamps: true });
 export const UserModel = model("User", UserSchema);
 export const ContentModel = model("Content", ContentSchema);

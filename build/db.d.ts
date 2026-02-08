@@ -1,22 +1,22 @@
 import { Schema } from "mongoose";
 export declare const UserModel: import("mongoose").Model<{
-    username: string;
     email: string;
     password: string;
+    firebaseUid?: string | null;
 } & import("mongoose").DefaultTimestampProps, {}, {}, {
     id: string;
 }, import("mongoose").Document<unknown, {}, {
-    username: string;
     email: string;
     password: string;
+    firebaseUid?: string | null;
 } & import("mongoose").DefaultTimestampProps, {
     id: string;
 }, {
     timestamps: true;
 }> & Omit<{
-    username: string;
     email: string;
     password: string;
+    firebaseUid?: string | null;
 } & import("mongoose").DefaultTimestampProps & {
     _id: import("mongoose").Types.ObjectId;
 } & {
@@ -26,21 +26,21 @@ export declare const UserModel: import("mongoose").Model<{
 }, Schema<any, import("mongoose").Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, {
     timestamps: true;
 }, {
-    username: string;
     email: string;
     password: string;
+    firebaseUid?: string | null;
 } & import("mongoose").DefaultTimestampProps, import("mongoose").Document<unknown, {}, {
-    username: string;
     email: string;
     password: string;
+    firebaseUid?: string | null;
 } & import("mongoose").DefaultTimestampProps, {
     id: string;
 }, import("mongoose").ResolveSchemaOptions<{
     timestamps: true;
 }>> & Omit<{
-    username: string;
     email: string;
     password: string;
+    firebaseUid?: string | null;
 } & import("mongoose").DefaultTimestampProps & {
     _id: import("mongoose").Types.ObjectId;
 } & {
@@ -51,17 +51,17 @@ export declare const UserModel: import("mongoose").Model<{
     [path: string]: import("mongoose").SchemaDefinitionProperty<undefined, any, any>;
 } | {
     [x: string]: import("mongoose").SchemaDefinitionProperty<any, any, import("mongoose").Document<unknown, {}, {
-        username: string;
         email: string;
         password: string;
+        firebaseUid?: string | null;
     } & import("mongoose").DefaultTimestampProps, {
         id: string;
     }, import("mongoose").ResolveSchemaOptions<{
         timestamps: true;
     }>> & Omit<{
-        username: string;
         email: string;
         password: string;
+        firebaseUid?: string | null;
     } & import("mongoose").DefaultTimestampProps & {
         _id: import("mongoose").Types.ObjectId;
     } & {
@@ -70,9 +70,9 @@ export declare const UserModel: import("mongoose").Model<{
         id: string;
     }> | undefined;
 }, {
-    username: string;
     email: string;
     password: string;
+    firebaseUid?: string | null;
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
@@ -80,9 +80,9 @@ export declare const UserModel: import("mongoose").Model<{
 } & {
     __v: number;
 }>, {
-    username: string;
     email: string;
     password: string;
+    firebaseUid?: string | null;
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
@@ -94,7 +94,7 @@ export declare const ContentModel: import("mongoose").Model<{
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
-    user: import("mongoose").Types.ObjectId;
+    userId: import("mongoose").Types.ObjectId;
     link?: string | null;
 } & import("mongoose").DefaultTimestampProps, {}, {}, {
     id: string;
@@ -102,7 +102,7 @@ export declare const ContentModel: import("mongoose").Model<{
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
-    user: import("mongoose").Types.ObjectId;
+    userId: import("mongoose").Types.ObjectId;
     link?: string | null;
 } & import("mongoose").DefaultTimestampProps, {
     id: string;
@@ -112,7 +112,7 @@ export declare const ContentModel: import("mongoose").Model<{
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
-    user: import("mongoose").Types.ObjectId;
+    userId: import("mongoose").Types.ObjectId;
     link?: string | null;
 } & import("mongoose").DefaultTimestampProps & {
     _id: import("mongoose").Types.ObjectId;
@@ -126,13 +126,13 @@ export declare const ContentModel: import("mongoose").Model<{
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
-    user: import("mongoose").Types.ObjectId;
+    userId: import("mongoose").Types.ObjectId;
     link?: string | null;
 } & import("mongoose").DefaultTimestampProps, import("mongoose").Document<unknown, {}, {
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
-    user: import("mongoose").Types.ObjectId;
+    userId: import("mongoose").Types.ObjectId;
     link?: string | null;
 } & import("mongoose").DefaultTimestampProps, {
     id: string;
@@ -142,7 +142,7 @@ export declare const ContentModel: import("mongoose").Model<{
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
-    user: import("mongoose").Types.ObjectId;
+    userId: import("mongoose").Types.ObjectId;
     link?: string | null;
 } & import("mongoose").DefaultTimestampProps & {
     _id: import("mongoose").Types.ObjectId;
@@ -157,7 +157,7 @@ export declare const ContentModel: import("mongoose").Model<{
         type: string;
         title: string;
         tags: import("mongoose").Types.ObjectId[];
-        user: import("mongoose").Types.ObjectId;
+        userId: import("mongoose").Types.ObjectId;
         link?: string | null;
     } & import("mongoose").DefaultTimestampProps, {
         id: string;
@@ -167,7 +167,7 @@ export declare const ContentModel: import("mongoose").Model<{
         type: string;
         title: string;
         tags: import("mongoose").Types.ObjectId[];
-        user: import("mongoose").Types.ObjectId;
+        userId: import("mongoose").Types.ObjectId;
         link?: string | null;
     } & import("mongoose").DefaultTimestampProps & {
         _id: import("mongoose").Types.ObjectId;
@@ -180,7 +180,7 @@ export declare const ContentModel: import("mongoose").Model<{
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
-    user: import("mongoose").Types.ObjectId;
+    userId: import("mongoose").Types.ObjectId;
     link?: string | null;
     createdAt: NativeDate;
     updatedAt: NativeDate;
@@ -192,7 +192,7 @@ export declare const ContentModel: import("mongoose").Model<{
     type: string;
     title: string;
     tags: import("mongoose").Types.ObjectId[];
-    user: import("mongoose").Types.ObjectId;
+    userId: import("mongoose").Types.ObjectId;
     link?: string | null;
     createdAt: NativeDate;
     updatedAt: NativeDate;
@@ -261,19 +261,19 @@ export declare const TagModel: import("mongoose").Model<{
     __v: number;
 }>;
 export declare const LinkModel: import("mongoose").Model<{
-    user?: import("mongoose").Types.ObjectId | null;
+    userId?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
 } & import("mongoose").DefaultTimestampProps, {}, {}, {
     id: string;
 }, import("mongoose").Document<unknown, {}, {
-    user?: import("mongoose").Types.ObjectId | null;
+    userId?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
 } & import("mongoose").DefaultTimestampProps, {
     id: string;
 }, {
     timestamps: true;
 }> & Omit<{
-    user?: import("mongoose").Types.ObjectId | null;
+    userId?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
 } & import("mongoose").DefaultTimestampProps & {
     _id: import("mongoose").Types.ObjectId;
@@ -284,17 +284,17 @@ export declare const LinkModel: import("mongoose").Model<{
 }, Schema<any, import("mongoose").Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, {
     timestamps: true;
 }, {
-    user?: import("mongoose").Types.ObjectId | null;
+    userId?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
 } & import("mongoose").DefaultTimestampProps, import("mongoose").Document<unknown, {}, {
-    user?: import("mongoose").Types.ObjectId | null;
+    userId?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
 } & import("mongoose").DefaultTimestampProps, {
     id: string;
 }, import("mongoose").ResolveSchemaOptions<{
     timestamps: true;
 }>> & Omit<{
-    user?: import("mongoose").Types.ObjectId | null;
+    userId?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
 } & import("mongoose").DefaultTimestampProps & {
     _id: import("mongoose").Types.ObjectId;
@@ -306,14 +306,14 @@ export declare const LinkModel: import("mongoose").Model<{
     [path: string]: import("mongoose").SchemaDefinitionProperty<undefined, any, any>;
 } | {
     [x: string]: import("mongoose").SchemaDefinitionProperty<any, any, import("mongoose").Document<unknown, {}, {
-        user?: import("mongoose").Types.ObjectId | null;
+        userId?: import("mongoose").Types.ObjectId | null;
         hash?: string | null;
     } & import("mongoose").DefaultTimestampProps, {
         id: string;
     }, import("mongoose").ResolveSchemaOptions<{
         timestamps: true;
     }>> & Omit<{
-        user?: import("mongoose").Types.ObjectId | null;
+        userId?: import("mongoose").Types.ObjectId | null;
         hash?: string | null;
     } & import("mongoose").DefaultTimestampProps & {
         _id: import("mongoose").Types.ObjectId;
@@ -323,7 +323,7 @@ export declare const LinkModel: import("mongoose").Model<{
         id: string;
     }> | undefined;
 }, {
-    user?: import("mongoose").Types.ObjectId | null;
+    userId?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
     createdAt: NativeDate;
     updatedAt: NativeDate;
@@ -332,7 +332,7 @@ export declare const LinkModel: import("mongoose").Model<{
 } & {
     __v: number;
 }>, {
-    user?: import("mongoose").Types.ObjectId | null;
+    userId?: import("mongoose").Types.ObjectId | null;
     hash?: string | null;
     createdAt: NativeDate;
     updatedAt: NativeDate;

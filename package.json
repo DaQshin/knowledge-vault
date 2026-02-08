@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc -b",
     "start": "node build/srv.js",
-    "dev": "npm run build && npm run start"
+    "dev": "npm run build && npm run start",
+    "dev:watch": "nodemon --exec npm run dev"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
   "dependencies": {
     "express": "^5.2.1",
     "firebase": "^12.9.0",
+    "firebase-admin": "^13.6.1",
     "get-port": "^7.1.0"
   },
   "devDependencies": {

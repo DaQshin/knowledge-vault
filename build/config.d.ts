@@ -1,3 +1,2 @@
-export declare const DB_URL: String;
-export declare const JWT_SECRET: String;
+export {};
 //# sourceMappingURL=config.d.ts.map
