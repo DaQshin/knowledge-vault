@@ -2,30 +2,22 @@
   "name": "knv",
   "version": "1.0.0",
   "description": "",
-  "main": "srv.js",
-  "scripts": {
-    "build": "tsc -b",
-    "start": "node build/srv.js",
-    "dev": "npm run build && npm run start",
-    "dev:watch": "nodemon --exec npm run dev"
+  "homepage": "https://github.com/DaQshin/knowledge-vault#readme",
+  "bugs": {
+    "url": "https://github.com/DaQshin/knowledge-vault/issues"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaQshin/knowledge-vault.git"
+  },
   "license": "ISC",
-  "type": "module",
-  "dependencies": {
-    "express": "^5.2.1",
-    "firebase": "^12.9.0",
-    "firebase-admin": "^13.6.1",
-    "get-port": "^7.1.0"
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^25.1.0",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.1.5",
-    "nodemon": "^3.1.11",
+  "dependencies": {
     "typescript": "^5.9.3"
   }
 }
