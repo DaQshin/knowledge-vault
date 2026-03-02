@@ -1,23 +1,17 @@
 {
   "name": "knv",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/DaQshin/knowledge-vault#readme",
-  "bugs": {
-    "url": "https://github.com/DaQshin/knowledge-vault/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DaQshin/knowledge-vault.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run dev --workspaces",
+    "build": "npm run build --workspaces",
+    "typecheck": "npm run typecheck --workspaces"
   },
-  "dependencies": {
+  "devDependencies": {
     "typescript": "^5.9.3"
   }
 }
