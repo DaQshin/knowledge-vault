@@ -1,11 +1,11 @@
 {
-  "name": "knv",
+  "name": "knv-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "srv.js",
+  "main": "server.js",
   "scripts": {
     "build": "tsc -b",
-    "start": "node build/server.js",
+    "start": "node dist/server.js",
     "dev": "npm run build && npm run start",
     "dev:watch": "nodemon --exec npm run dev"
   },
