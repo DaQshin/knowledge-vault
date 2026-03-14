@@ -1,7 +1,7 @@
-import { Button } from "./Button";
-import { ShareIcon } from "../assets/icons/ShareIcon";
-import { PlusIcon } from "../assets/icons/PlusIcon";
-import { Card } from "./Card";
+import { Button } from "../Button";
+import { ShareIcon } from "../../assets/icons/ShareIcon";
+import { PlusIcon } from "../../assets/icons/PlusIcon";
+import { Card } from "../Card";
 import { CreateContentModal } from "./CreateContentModal";
 import { useState } from "react";
 
@@ -31,6 +31,36 @@ export function MainContent() {
       </div>
 
       <div className="p-8 grid grid-cols-3 gap-4">
+        <Card
+          title="systems programming"
+          link="https://www.youtube.com/embed/7wuaLanSqDs?si=2LQZSDOAIuEHREdO"
+          type="yt"
+        ></Card>
+
+        <Card
+          title="systems programming"
+          link="https://www.youtube.com/embed/7wuaLanSqDs?si=2LQZSDOAIuEHREdO"
+          type="yt"
+        ></Card>
+
+        <Card
+          title="systems programming"
+          link="https://www.youtube.com/embed/7wuaLanSqDs?si=2LQZSDOAIuEHREdO"
+          type="yt"
+        ></Card>
+
+        <Card
+          title="systems programming"
+          link="https://www.youtube.com/embed/7wuaLanSqDs?si=2LQZSDOAIuEHREdO"
+          type="yt"
+        ></Card>
+
+        <Card
+          title="systems programming"
+          link="https://www.youtube.com/embed/7wuaLanSqDs?si=2LQZSDOAIuEHREdO"
+          type="yt"
+        ></Card>
+
         <Card
           title="systems programming"
           link="https://www.youtube.com/embed/7wuaLanSqDs?si=2LQZSDOAIuEHREdO"

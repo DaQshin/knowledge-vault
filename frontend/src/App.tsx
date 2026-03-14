@@ -1,10 +1,8 @@
-import { Sidebar } from "./components/Sidebar";
-import { MainContent } from "./components/MainContent";
+import { MainContent } from "./components/content/MainContent";
 
 function App() {
   return (
     <div className="flex">
-      <Sidebar />
       <MainContent />
     </div>
   );

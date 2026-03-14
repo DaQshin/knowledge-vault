@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { CrossIcon } from "../assets/icons/CrossIcon";
+import { CrossIcon } from "../../assets/icons/CrossIcon";
 // import { Button } from "./Button";
 import { React } from "react";
 import { ContentInput } from "./ContentInput";
