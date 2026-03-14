@@ -1,9 +1,10 @@
 import express from "express";
 import type { Request, Response } from "express";
-import { UserModel, ContentModel } from "./db.js";
+import { UserModel, ContentModel, LinkModel } from "./db.js";
 import { authenticate } from "./middleware.js";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "./config.js";
+import { randomString } from "./utils.js";
 
 const app = express();
 app.use(express.json());
@@ -111,8 +112,63 @@ app.get(
   },
 );
 
-app.post("/api/v1/vault/share", (req: Request, res: Response) => {});
+app.post(
+  "/api/v1/vault/share",
+  authenticate,
+  async (req: Request, res: Response) => {
+    const share = req.body.share;
+    try {
+      if (share) {
+        const hash = randomString(25);
+        await LinkModel.create({
+          userId: req.body.userId,
+          hash,
+        });
 
-app.get("/api/v1/vault/:sharelink", (req: Request, res: Response) => {});
+        res.status(201).json({
+          message: "Link created successfully.",
+          data: {
+            hash: "/s/" + hash,
+          },
+        });
+      } else {
+        await LinkModel.deleteOne({
+          userId: req.body.userId,
+        });
+        res.status(201).json({
+          message: "Link removed",
+        });
+      }
+    } catch (err) {
+      res.json({
+        message: err,
+      });
+    }
+  },
+);
+app.get(
+  "/api/v1/vault/s/:sharelink",
+  authenticate,
+  async (req: Request, res: Response) => {
+    const hash = req.params.sharelink as string;
 
+    const userId = await LinkModel.findOne({ hash }).select("userId").lean();
+    console.log(userId);
+
+    if (!userId) {
+      return res.status(404).json({
+        message: "Link not found",
+      });
+    }
+
+    const content = await ContentModel.find({ userId });
+
+    res.status(200).json({
+      data: {
+        userId,
+        content,
+      },
+    });
+  },
+);
 export default app;
