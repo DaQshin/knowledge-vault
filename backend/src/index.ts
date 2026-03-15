@@ -5,17 +5,22 @@ import { authenticate } from "./middleware.js";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "./config.js";
 import { randomString } from "./utils.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post("/api/v1/vault/signup", async (req: Request, res: Response) => {
   const { username, email, password } = req.body;
 
   try {
     await UserModel.create({ username, email, password });
+    res.status(200).json({
+      message: "user created successfully",
+    });
   } catch (err) {
-    return res.status(411).json({
+    return res.status(200).json({
       message: "user already exists",
     });
   }
